@@ -1,0 +1,25 @@
+{
+  "name": "simulation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "esbuild": "^0.25.4",
+    "express": "^5.1.0",
+    "react-router-dom": "^7.6.0",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1",
+    "styled-components": "^6.1.18"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5"
+  }
+}
