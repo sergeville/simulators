@@ -1,62 +1,58 @@
-# Real-Time Simulation Dashboard
+# Tic Tac Toe Simulator
 
-This project implements a real-time simulation dashboard with a Node.js backend and React frontend. The application displays real-time data visualization using Chart.js.
+This project is a real-time Tic Tac Toe simulator with AI, featuring a modern React frontend (Vite, default port 5173) and a Node.js backend with Socket.IO (port 8000). It is inspired by and references:
+
+- [TIC-TAC-TOE-AI-TUTORIAL.md](./TIC-TAC-TOE-AI-TUTORIAL.md)
+- [simulator.md](./simulator.md)
 
 ## Features
+- Play against Rule-Based or Random AI
+- Real-time updates with Socket.IO
+- Modern, responsive, and accessible UI
+- Trace logs for backend and frontend debugging
 
-- Real-time data simulation
-- Multiple data streams (value, temperature, pressure)
-- Interactive charts
-- WebSocket communication
-- Responsive design
+## Getting Started
 
-## Prerequisites
+### Prerequisites
+- Node.js (v16+ recommended)
+- npm
 
-- Node.js (v14 or higher)
-- npm (v6 or higher)
-
-## Installation
-
-1. Clone the repository
+### Installation
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/sergeville/tictactoe-simulator.git
+   cd tictactoe-simulator
+   ```
 2. Install backend dependencies:
-```bash
-npm install
-```
-
+   ```bash
+   cd tictactoe/backend
+   npm install
+   ```
 3. Install frontend dependencies:
-```bash
-cd frontend
-npm install
-```
+   ```bash
+   cd ../frontend
+   npm install
+   ```
 
-## Running the Application
+### Running the App
+1. Start the backend (port 8000):
+   ```bash
+   cd tictactoe/backend
+   node server.js
+   ```
+2. In a new terminal, start the frontend (Vite, default port 5173):
+   ```bash
+   cd tictactoe/frontend
+   npm run dev
+   ```
+3. Open your browser to [http://localhost:5173](http://localhost:5173)
 
-1. Start the backend server (from the root directory):
-```bash
-node server.js
-```
+- The backend will be available at [http://localhost:8000](http://localhost:8000)
+- The frontend will be available at [http://localhost:5173](http://localhost:5173)
 
-2. In a new terminal, start the frontend development server:
-```bash
-cd frontend
-npm start
-```
+## References
+- See [TIC-TAC-TOE-AI-TUTORIAL.md](./TIC-TAC-TOE-AI-TUTORIAL.md) for AI strategies and learning concepts.
+- See [simulator.md](./simulator.md) for real-time simulator architecture and best practices.
 
-The application will be available at:
-- Frontend: http://localhost:3000
-- Backend: http://localhost:3001
-
-## Architecture
-
-- Backend: Node.js with Express and Socket.IO
-- Frontend: React with Chart.js
-- Real-time communication: WebSocket (Socket.IO)
-
-## Data Visualization
-
-The dashboard displays three real-time data streams:
-- Value (sine wave)
-- Temperature (random values)
-- Pressure (random values)
-
-Each data point is updated every 100ms, and the chart maintains a rolling window of the last 50 data points. 
+## License
+MIT 
