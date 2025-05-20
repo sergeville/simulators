@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  font-family: 'Quicksand', 'Segoe UI', Arial, sans-serif;
+  background: #23272f;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #23272f;
+}
+
+h1 {
+  font-family: 'Permanent Marker', cursive, sans-serif;
+  font-size: 2.5rem;
+  margin: 32px 0 16px 0;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+select, button {
+  font-family: inherit;
+}
+
+/* Game Container */
+[class*="GameContainer"] {
+  background: #2c313c;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+  padding: 32px 24px 24px 24px;
+  margin: 24px 0;
+  min-width: 340px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Board */
+[class*="Board"] {
+  background: #e0e3ea;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 24px 0 0 0;
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  grid-template-rows: repeat(3, 60px);
+  gap: 12px;
+}
+
+/* Cell */
+[class*="Cell"] {
+  background: #e5e7eb;
+  border: 2px solid #b0b4be;
+  border-radius: 8px;
+  font-size: 2.4rem;
+  color: #23272f;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+[class*="Cell"]:hover:not(:disabled) {
+  background: #e0e3ea;
+  color: #21a1f3;
+}
+[class*="Cell"]:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Status */
+[class*="Status"] {
+  font-size: 1.2rem;
+  margin: 18px 0 0 0;
+  color: #21a1f3;
+  font-family: 'Quicksand', Arial, sans-serif;
+  font-weight: bold;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+
+/* Select and Button */
+select {
+  background: #23272f;
+  color: #fff;
+  border: 1px solid #61dafb;
+  border-radius: 6px;
+  padding: 6px 12px;
+  margin-right: 10px;
+}
+button {
+  background: #61dafb;
+  color: #23272f;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+button:disabled {
+  background: #444b5a;
+  color: #888;
+  cursor: not-allowed;
+}
+button:hover:not(:disabled) {
+  background: #21a1f3;
+  color: #fff;
+}
