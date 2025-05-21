@@ -43,4 +43,7 @@ This is the frontend for the Tic Tac Toe Simulator, built with React and Vite.
 - [simulator.md](../simulator.md)
 
 ## License
-MIT
+
+This project is licensed under the [MIT License](../LICENSE).
+
+Copyright (c) 2024 Serge Villeneuve

@@ -4,7 +4,6 @@ This project is a real-time Tic Tac Toe simulator with AI, featuring a modern Re
 
 - [TIC-TAC-TOE-AI-TUTORIAL.md](./TIC-TAC-TOE-AI-TUTORIAL.md)
 - [simulator.md](./simulator.md)
-- [Create-a-release.md](./Create-a-release.md)
 
 ## Features
 - Play against Rule-Based or Random AI
@@ -54,7 +53,9 @@ This project is a real-time Tic Tac Toe simulator with AI, featuring a modern Re
 ## References
 - See [TIC-TAC-TOE-AI-TUTORIAL.md](./TIC-TAC-TOE-AI-TUTORIAL.md) for AI strategies and learning concepts.
 - See [simulator.md](./simulator.md) for real-time simulator architecture and best practices.
-- See [Create-a-release.md](./Create-a-release.md) for instructions on creating a GitHub release (manual and automated).
 
 ## License
-MIT 
+
+This project is licensed under the [MIT License](./LICENSE).
+
+Copyright (c) 2024 Serge Villeneuve 
