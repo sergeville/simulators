@@ -51,8 +51,9 @@ This project is a real-time Tic Tac Toe simulator with AI, featuring a modern Re
 - The frontend will be available at [http://localhost:5173](http://localhost:5173)
 
 ## References
-- See [TIC-TAC-TOE-AI-TUTORIAL.md](./TIC-TAC-TOE-AI-TUTORIAL.md) for AI strategies and learning concepts.
-- See [simulator.md](./simulator.md) for real-time simulator architecture and best practices.
+- [TIC-TAC-TOE-AI-TUTORIAL.md](./TIC-TAC-TOE-AI-TUTORIAL.md): A comprehensive guide to AI strategies, learning, and tournament systems for Tic Tac Toe.
+- [simulator.md](./simulator.md): Implementation guide for building real-time simulators, including architecture and best practices.
+- [Create-a-release.md](./Create-a-release.md): Step-by-step instructions for creating GitHub releases, both manually and via automation.
 
 ## License
 
