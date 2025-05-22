@@ -78,4 +78,169 @@ chess/
 
 ---
 
-*This document was collaboratively authored by Serge Villeneuve and an AI assistant as part of the open-source Chess Simulator project.* 
+*This document was collaboratively authored by Serge Villeneuve and an AI assistant as part of the open-source Chess Simulator project.*
+
+# Chess Simulator Technical Documentation
+
+## Overview
+
+The Chess Simulator is a modern web application that implements a chess game with AI players. It features a responsive UI, real-time game updates, and professional-level AI opponents.
+
+## Architecture
+
+### Frontend Architecture
+
+#### Components
+1. **ChessBoard**
+   - Main game board component
+   - Handles piece rendering and movement
+   - Manages game state and AI interactions
+   - Implements visual effects and animations
+
+2. **Game State Management**
+   - Tracks current player turn
+   - Manages captured pieces
+   - Handles game end conditions
+   - Controls AI player interactions
+
+#### Styling
+- Uses styled-components for CSS-in-JS
+- Responsive design for all screen sizes
+- Custom animations for game events
+- Consistent color scheme and typography
+
+### Game Features
+
+#### Board Display
+- 8x8 grid with alternating colors
+- Proper piece placement and movement
+- Visual indicators for current player
+- Captured pieces display
+
+#### Piece Management
+- Unicode chess pieces with proper colors
+- Piece movement validation
+- Capture tracking and display
+- Game state persistence
+
+#### AI Integration
+- Deep Blue (White) and Stockfish (Black)
+- Real-time move calculation
+- Professional-level play
+- Game state synchronization
+
+### Visual Effects
+
+#### Animations
+1. **Current Player Indicator**
+   - Pulsing green dot
+   - Thinking animation
+   - Player name highlighting
+
+2. **Game Events**
+   - Fireworks on game completion
+   - Smooth piece movements
+   - Winner announcement banner
+
+#### Captured Pieces Display
+- 3-column grid layout
+- Ordered by piece value
+- Color-coded pieces
+- Clear visual separation
+
+## Technical Implementation
+
+### Chess Logic
+- Uses chess.js for game rules
+- FEN notation for board state
+- Move validation and execution
+- Game state management
+
+### State Management
+```javascript
+// Game state structure
+{
+  board: Array<Array<Piece>>,
+  currentPlayer: 'w' | 'b',
+  captured: {
+    white: { p: number, r: number, n: number, b: number, q: number },
+    black: { p: number, r: number, n: number, b: number, q: number }
+  },
+  gameOver: boolean,
+  winner: 'w' | 'b' | 'draw' | null
+}
+```
+
+### Component Structure
+```javascript
+// ChessBoard component
+const ChessBoard = ({ fen }) => {
+  // State management
+  const [showWinner, setShowWinner] = useState(false);
+  const [winner, setWinner] = useState(null);
+  const [fireworks, setFireworks] = useState([]);
+
+  // Game logic
+  const board = fen ? fenToBoard(fen) : initialBoard;
+  const currentPlayer = fen ? (new Chess(fen)).turn() : 'w';
+
+  // Rendering
+  return (
+    <BoardContainer>
+      <PlayerColumn>
+        {/* Black player info and captured pieces */}
+      </PlayerColumn>
+      <Grid>
+        {/* Chess board */}
+      </Grid>
+      <PlayerColumn>
+        {/* White player info and captured pieces */}
+      </PlayerColumn>
+    </BoardContainer>
+  );
+};
+```
+
+## Future Improvements
+
+### Planned Features
+1. **Enhanced AI**
+   - Multiple AI difficulty levels
+   - Customizable AI behavior
+   - AI vs AI mode
+
+2. **UI Enhancements**
+   - Move history display
+   - Game statistics
+   - Custom themes
+
+3. **Game Features**
+   - Save/load games
+   - Game replay
+   - Tournament mode
+
+### Performance Optimizations
+- Memoization of expensive calculations
+- Optimized piece rendering
+- Improved state management
+- Better error handling
+
+## Development Guidelines
+
+### Code Style
+- Use functional components
+- Implement proper error boundaries
+- Follow React best practices
+- Maintain consistent styling
+
+### Testing
+- Unit tests for game logic
+- Component testing
+- Integration tests
+- Performance testing
+
+### Documentation
+- Keep README updated
+- Document new features
+- Maintain code comments
+- Update technical docs 
