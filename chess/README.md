@@ -2,6 +2,12 @@
 
 A modern chess application featuring AI players with a beautiful UI and real-time game updates.
 
+---
+
+**Note:** This documentation was merged and cleaned up from previous versions for clarity and completeness.
+
+---
+
 ## Features
 
 ### Game Interface
@@ -34,8 +40,13 @@ A modern chess application featuring AI players with a beautiful UI and real-tim
 ### Frontend
 - Built with React and styled-components
 - Uses chess.js for game logic
-- Real-time updates with WebSocket
+- Real-time updates with Socket.IO
 - Responsive and modern UI design
+
+### Backend
+- Node.js backend (Express + Socket.IO)
+- Real-time game state and AI logic
+- Trace logs for backend and frontend debugging
 
 ### AI Players
 - Deep Blue (White)
@@ -43,20 +54,55 @@ A modern chess application featuring AI players with a beautiful UI and real-tim
 - Real-time move calculation
 - Professional-level play
 
+## Project Structure
+```
+chess/
+├── backend/   # Node.js backend (Express + Socket.IO)
+│   └── server.js
+│   └── package.json
+├── frontend/  # React (Vite) frontend
+│   ├── src/
+│   │   ├── ChessBoard.jsx    # Main game board component
+│   │   ├── App.jsx          # Application entry point
+│   │   └── ...
+│   ├── package.json
+│   └── ...
+└── README.md
+```
+
 ## Getting Started
 
-1. Install dependencies:
-```bash
-cd frontend
-npm install
-```
+### Prerequisites
+- Node.js (v16+ recommended)
+- npm
 
-2. Start the development server:
-```bash
-npm run dev
-```
+### Installation
+1. Install backend dependencies:
+   ```bash
+   cd chess/backend
+   npm install
+   ```
+2. Install frontend dependencies:
+   ```bash
+   cd ../frontend
+   npm install
+   ```
 
-3. Open your browser to `http://localhost:5173`
+### Running the App
+1. Start the backend (default port 8000):
+   ```bash
+   cd chess/backend
+   npm start
+   ```
+2. In a new terminal, start the frontend (default port 5173):
+   ```bash
+   cd chess/frontend
+   npm run dev
+   ```
+3. Open your browser to [http://localhost:5173](http://localhost:5173)
+
+- Backend: [http://localhost:8000](http://localhost:8000)
+- Frontend: [http://localhost:5173](http://localhost:5173)
 
 ## Game Rules
 
@@ -67,20 +113,6 @@ The game follows standard chess rules:
 - Game ends with checkmate or draw
 
 ## Development
-
-### Project Structure
-```
-chess/
-├── frontend/
-│   ├── src/
-│   │   ├── ChessBoard.jsx    # Main game board component
-│   │   ├── App.jsx          # Application entry point
-│   │   └── ...
-│   ├── package.json
-│   └── ...
-└── backend/
-    └── ...
-```
 
 ### Key Components
 - `ChessBoard.jsx`: Main game board with piece rendering and game logic
