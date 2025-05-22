@@ -1,13 +1,20 @@
 import React from 'react';
-import TicTacToe from './components/TicTacToe';
-import './App.css';
+import styled from 'styled-components';
 
-function App() {
+const AppContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+`;
+
+const App = () => {
   return (
-    <div className="App">
-      <TicTacToe />
-    </div>
+    <AppContainer>
+      <h1>Tic Tac Toe Simulator</h1>
+    </AppContainer>
   );
-}
+};
 
 export default App;

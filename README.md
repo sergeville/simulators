@@ -1,62 +1,50 @@
-# Tic Tac Toe Simulator
+# Real-Time Games Project Structure
 
-This project is a real-time Tic Tac Toe simulator with AI, featuring a modern React frontend (Vite, default port 5173) and a Node.js backend with Socket.IO (port 8000). It is inspired by and references:
+This repository is organized for scalable, modular development of real-time games. Each game (e.g., Tic Tac Toe, Chess) is self-contained in its own folder, with separate frontend and backend implementations. This structure makes it easy to add new games, maintain code, and keep dependencies isolated.
 
-- [TIC-TAC-TOE-AI-TUTORIAL.md](./TIC-TAC-TOE-AI-TUTORIAL.md)
-- [simulator.md](./simulator.md)
+## Project Structure
 
-## Features
-- Play against Rule-Based or Random AI
-- Real-time updates with Socket.IO
-- Modern, responsive, and accessible UI
-- Trace logs for backend and frontend debugging
+```
+.
+├── tictactoe/
+│   ├── backend/   # Node.js backend (Express + Socket.IO)
+│   └── frontend/  # React (Vite) frontend
+├── chess/
+│   ├── backend/   # Node.js backend (Express + Socket.IO)
+│   └── frontend/  # React (Vite) frontend
+├── LICENSE
+├── README.md
+├── TIC-TAC-TOE-AI-TUTORIAL.md
+├── simulator.md
+└── ...
+```
+
+## How It Works
+- **Each game** lives in its own top-level folder (e.g., `tictactoe/`, `chess/`).
+- **Each game folder** contains:
+  - `backend/`: Node.js server (Express + Socket.IO)
+  - `frontend/`: React (Vite) client
+- **Documentation and setup** for each game is in its own `README.md` inside the game folder.
+
+## Adding a New Game
+1. Create a new folder at the project root (e.g., `mynewgame/`).
+2. Add `backend/` and `frontend/` subfolders with your implementations.
+3. Add a `README.md` in your game folder with setup and usage instructions.
+4. Follow the structure of the existing games for best practices.
 
 ## Getting Started
+- See `tictactoe/README.md` or `chess/README.md` for instructions on running each game.
+- Each game is independent; you can run one or both at the same time.
 
-### Prerequisites
-- Node.js (v16+ recommended)
-- npm
-
-### Installation
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/sergeville/tictactoe-simulator.git
-   cd tictactoe-simulator
-   ```
-2. Install backend dependencies:
-   ```bash
-   cd tictactoe/backend
-   npm install
-   ```
-3. Install frontend dependencies:
-   ```bash
-   cd ../frontend
-   npm install
-   ```
-
-### Running the App
-1. Start the backend (port 8000):
-   ```bash
-   cd tictactoe/backend
-   node server.js
-   ```
-2. In a new terminal, start the frontend (Vite, default port 5173):
-   ```bash
-   cd tictactoe/frontend
-   npm run dev
-   ```
-3. Open your browser to [http://localhost:5173](http://localhost:5173)
-
-- The backend will be available at [http://localhost:8000](http://localhost:8000)
-- The frontend will be available at [http://localhost:5173](http://localhost:5173)
-
-## References
-- [TIC-TAC-TOE-AI-TUTORIAL.md](./TIC-TAC-TOE-AI-TUTORIAL.md): A comprehensive guide to AI strategies, learning, and tournament systems for Tic Tac Toe.
-- [simulator.md](./simulator.md): Implementation guide for building real-time simulators, including architecture and best practices.
-- [Create-a-release.md](./Create-a-release.md): Step-by-step instructions for creating GitHub releases, both manually and via automation.
+## Documentation
+- [TIC-TAC-TOE-AI-TUTORIAL.md](./TIC-TAC-TOE-AI-TUTORIAL.md): AI strategies and tournament systems for Tic Tac Toe.
+- [simulator.md](./simulator.md): Implementation guide for real-time simulators.
+- [Create-a-release.md](./Create-a-release.md): GitHub release instructions.
 
 ## License
 
 This project is licensed under the [MIT License](./LICENSE).
 
 Copyright (c) 2024 Serge Villeneuve 
+
+const BACKEND_URL = 'http://localhost:8000'; 
