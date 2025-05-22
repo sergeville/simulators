@@ -1,7 +1,19 @@
 # Chess Simulator: Conception & Design Discussion
 
+## Historical Conception & Design (from early collaboration)
+
+The following section documents the initial conception and collaborative design process for the Chess Simulator, as iteratively developed by Serge Villeneuve and an AI assistant. This summary is based on early design notes and lessons learned from the Tic Tac Toe Simulator project.
+
+---
+
 ## Overview
 The Chess Simulator is a real-time, modular web application designed for both human and AI (agent-vs-agent) play. It was conceived and iteratively designed through a collaborative process between Serge Villeneuve (user) and an AI assistant, building on lessons learned from the Tic Tac Toe Simulator project.
+
+## Visual Overview
+
+![Chess Simulator UI](./chess.png)
+
+*Screenshot: The Chess Simulator web interface, showing the board, AI player names, current player indicator, and game controls. The UI is designed for clarity, accessibility, and real-time play between AI agents or humans.*
 
 ## Project Goals
 - **Real-time gameplay** with Socket.IO for seamless move updates.
