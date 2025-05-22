@@ -11,7 +11,7 @@ The Chess Simulator is a real-time, modular web application designed for both hu
 
 ## Visual Overview
 
-![Chess Simulator UI](./chess.png)
+![Chess Simulator UI](./ChessSimulation.png)
 
 *Screenshot: The Chess Simulator web interface, showing the board, AI player names, current player indicator, and game controls. The UI is designed for clarity, accessibility, and real-time play between AI agents or humans.*
 
