@@ -5,7 +5,7 @@ const cors = require('cors');
 
 const app = express();
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: ["http://localhost:5173", "http://localhost:5174"],
   methods: ["GET", "POST"],
   credentials: true
 };
@@ -216,7 +216,35 @@ app.use((err, req, res, next) => {
   console.log(`[TRACE][RESPONSE][ERROR] ${req.method} ${req.url} -> 500 Internal Server Error`);
 });
 
-const PORT = process.env.PORT || 8000;
-server.listen(PORT, () => {
-  console.log(`[TRACE] Backend server running on port ${PORT}`);
-}); 
+const DEFAULT_PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 8000;
+let port = DEFAULT_PORT;
+const MAX_ATTEMPTS = 10;
+const ERROR_LIMIT = 3;
+let attempts = 0;
+
+function startServer() {
+  server.listen(port, () => {
+    console.log(`[TRACE] Backend server running on port ${port}`);
+  });
+}
+
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE' && attempts < MAX_ATTEMPTS) {
+    attempts++;
+    if (attempts > ERROR_LIMIT) {
+      console.error(`\x1b[31m[ERROR] Port ${port} is still in use after ${ERROR_LIMIT} attempts.\nTo fix: Stop all processes using ports 8000 to 8009.\nYou can run:\nfor port in {8000..8009}; do lsof -ti :$port ; done | xargs -r kill\nto kill all processes on those ports.\x1b[0m`);
+      process.exit(1);
+    }
+    console.warn(`[WARN] Port ${port} in use, trying port ${port + 1}...`);
+    port++;
+    setTimeout(startServer, 500);
+  } else if (err.code === 'EADDRINUSE') {
+    console.error(`[ERROR] Could not start server after ${MAX_ATTEMPTS} attempts:`, err);
+    process.exit(1);
+  } else {
+    console.error(`[ERROR] Could not start server:`, err);
+    process.exit(1);
+  }
+});
+
+startServer(); 
